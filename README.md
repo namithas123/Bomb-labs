@@ -1,5 +1,5 @@
 # Bomb-labs
-###RE challenge
+###RE-challenge
 ######Phase1:
  Open in radar ,You can find password to first phase
 * Public speaking is very easy.*
@@ -31,7 +31,7 @@ find break points   ---1
    0x08048b88 <+64>:	inc    ebx                    //inc ebx
    0x08048b89 <+65>:	cmp    ebx,0x5                
    0x08048b8c <+68>:	jle    0x8048b76 <phase_2+46>
-
+```
 loop:
 eax=1,ebx=1 initially
 eax=ebx+1
@@ -48,9 +48,9 @@ ebx++
 
 *1 2 6 24 120 720*
 
-Phase_3
--------
-break phase_3
+#####Phase_3
+
+
 run ...
 ```
 |           0x08048bb1      68de970408     push str.d__c__d  ; 0x80497de ; "%d %c %d"  // int char int is password
@@ -58,10 +58,7 @@ run ...
 1st--[ebp-0xc]
 2nd--[ebp-0x5]
 3rd--[ebp-0x4]
-//cmp if 3rd num is 214
-```
-0x8048c02 <phase_3+106>:	cmp    DWORD PTR [ebp-0x4],0xd6
-```
+
    0x08048bc9 <+49>:	cmp    DWORD PTR [ebp-0xc],0x7  //consist of 1st integer
     uses any number fron 0 to 7
 
@@ -90,44 +87,49 @@ hence one combination is
 
 
 
-PHASE_4
--------
+#####PHASE_4
+
 0x8049808:	"%d"
 then we went furthur to func4
+```
    0x08048ca8 <+8>:	mov    ebx,DWORD PTR [ebp+0x8]  //input into ebx  
  0x08048cab <+11>:	cmp    ebx,0x1 //inp<=1-- return 1
+```
 else
-    0x08048cb3 <+19>:	lea    eax,[ebx-0x1]   //eax=ebx-1
-   0x08048cbc <+28>:	mov    esi,eax         //moving to esi
-   0x08048cc1 <+33>:	lea    eax,[ebx-0x2]   //eax=ebx-2
-      0x08048cca <+42>:	add    eax,esi         func4(n)+func4(n-1)
+```
+0x08048cb3 <+19>:	lea    eax,[ebx-0x1]   //eax=ebx-1
+0x08048cbc <+28>:	mov    esi,eax         //moving to esi
+0x08048cc1 <+33>:	lea    eax,[ebx-0x2]   //eax=ebx-2
+0x08048cca <+42>:	add    eax,esi         func4(n)+func4(n-1)
+```
 1 1 2 3 5 8 13 21 34 55
 input=4
 if (n=3)
   eax=5-----5
  soo
  if eax=55 
-  that means n=9 ===input
+  that means n=9
 
-
+*9*
 the program is basically fibonacci series
 
 
-PHASE_5
--------
+######PHASE_5
+```
  0x08048d3b <+15>:	call   0x8049018 <string_length>
    0x08048d40 <+20>:	add    esp,0x10
    0x08048d43 <+23>:	cmp    eax,0x6                         //sHOWING string length to be 6
-
+````
 
 
 esi=isrveawhobpnutfg
 
 eax=ef
-0x08048d72 <+70>:	push   0x804980b            //shows'giants'
+````
+   0x08048d72 <+70>:	push   0x804980b            //shows'giants'
    0x08048d77 <+75>:	lea    eax,[ebp-0x8]
    0x08048d7a <+78>:	push   eax                  //shows 	"srveaw" //when input is "abcdef"
-
+````
 
 
 
@@ -164,7 +166,7 @@ DWORD PTR [ebp-0x34]:0xfd:253
 
 eax=123456
 // numbers are inputted by 4 byte
-
+```
  0x08048fe4 <+12>:	lea    eax,[edx+0x14]
    0x08048fe7 <+15>:	push   eax
    0x08048fe8 <+16>:	lea    eax,[edx+0x10]
@@ -175,9 +177,10 @@ eax=123456
    0x08048ff3 <+27>:	push   eax
    0x08048ff4 <+28>:	lea    eax,[edx+0x4]
    0x08048ff7 <+31>:	push   eax
-
+```
 
 Dump of assembler code for function phase_6:
+````
    0x08048d98 <+0>:	push   ebp
    0x08048d99 <+1>:	mov    ebp,esp
    0x08048d9b <+3>:	sub    esp,0x4c
@@ -272,10 +275,12 @@ Dump of assembler code for function phase_6:
    0x08048e8f <+247>:	pop    ebp
    0x08048e90 <+248>:	ret    
 End of assembler dump.
+`````
 (gdb) 
 
  node1--   0xfd     //check if node1<node2
  node2--   0x2d5       
+ ````
 0x804b26c <node1>:	0x000000fd	0x00000001	0x0804b260  253
 0x804b260 <node2>:	0x000002d5	0x00000002	0x0804b254  725
 0x804b254 <node3>:	0x0000012d	0x00000003	0x0804b248  301
@@ -284,9 +289,11 @@ End of assembler dump.
 0x804b230 <node6>:	0x000001b0	0x00000006	0x00000000  432
   0x8048e75 <phase_6+221>:	cmp    eax,DWORD PTR [edx]
    0x8048e77 <phase_6+223>:	jge    0x8048e7e <phase_6+230>
+
+`````
 writting in order:::
 --------------------
-4 2 6 3 1 5  ------password
+*4 2 6 3 1 5 * ------password
 Here the value of next node is compared with present node and writte
 n in decending order
 
