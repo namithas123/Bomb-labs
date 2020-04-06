@@ -1,7 +1,11 @@
 # Bomb-labs
 **RE-challenge**
+
+
+
 *PHASE_1*
- Open in radar ,You can find password to first phase
+Open in radar ,You can find password to first phase
+
 *Public speaking is very easy.*
 
 *PHASE_2*
@@ -150,14 +154,14 @@ So, we must find a character whose ASCII representation when AND-ed with 0xf ret
 a & 0xf gives 01 ---s 
 so for g---- position in esi is 15
  so find a char which anded with 0xf forms binary of 15--o
-
+```
 15-o
 0-p
 5-e
 11-k
 13-m
 1-a
-
+```
 
 *PHASE_6*
 
