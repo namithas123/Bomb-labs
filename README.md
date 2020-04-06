@@ -1,9 +1,9 @@
 # Bomb-labs
-##RE-challenge
-######Phase1:
+**RE-challenge**
+_Phase1:_
  Open in radar ,You can find password to first phase
-* Public speaking is very easy.*
-######phase 2:
+*Public speaking is very easy.*
+*phase 2:*
 break phase_2
 ```
    0x08048b59 <+17>:	push   eax
@@ -45,10 +45,10 @@ ebx++
 24 
 120                  //ebx<=5
 720
-
+Password:
 *1 2 6 24 120 720*
 
-#####Phase_3
+*Phase_3*
 
 
 run ...
@@ -79,7 +79,7 @@ EG: if run pass.txt
 => 0x08048c02 <+106>:	cmp    DWORD PTR [ebp-0x4],0xd6 //cmp if 214
    0x08048c09 <+113>:	je     0x8048c8f <phase_3+247>
 ```
-
+PASSWORD
 hence one combination is 
 *1 b 214*
 
@@ -87,7 +87,7 @@ hence one combination is
 
 
 
-#####PHASE_4
+*PHASE_4*
 
 0x8049808:	"%d"
 then we went furthur to func4
@@ -114,7 +114,7 @@ if (n=3)
 the program is basically fibonacci series
 
 
-######PHASE_5
+*PHASE_5*
 ```
  0x08048d3b <+15>:	call   0x8049018 <string_length>
    0x08048d40 <+20>:	add    esp,0x10
@@ -134,15 +134,16 @@ eax=ef
 
 
 
-
+```
 ebx == abcdef
 esi == srveaw
 edi == giants
 edx == srveaw
 ecx == giants
+```
 
-
-Our first letter of the password is ‘g’. It lies on the 15-th index of the string in esi. So, we must find a character whose ASCII representation when AND-ed with 0xf returns 15.
+Our first letter of the password is ‘g’. It lies on the 15-th index of the string in esi.
+So, we must find a character whose ASCII representation when AND-ed with 0xf returns 15.
 
 
 a & 0xf gives 01 ---s 
