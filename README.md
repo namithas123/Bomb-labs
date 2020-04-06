@@ -1,9 +1,10 @@
 # Bomb-labs
 **RE-challenge**
-_Phase1:_
+*PHASE_1*
  Open in radar ,You can find password to first phase
 *Public speaking is very easy.*
-*phase 2:*
+
+*PHASE_2*
 break phase_2
 ```
    0x08048b59 <+17>:	push   eax
@@ -48,7 +49,7 @@ ebx++
 Password:
 *1 2 6 24 120 720*
 
-*Phase_3*
+*PHASE_3*
 
 
 run ...
@@ -158,8 +159,8 @@ so for g---- position in esi is 15
 1-a
 
 
-PHASE_6
--------
+*PHASE_6*
+
 edx=23456
 
 DWORD PTR [ebp-0x34]:0xfd:253
