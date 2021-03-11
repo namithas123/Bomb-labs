@@ -63,22 +63,27 @@ run ...
 1st--[ebp-0xc]
 2nd--[ebp-0x5]
 3rd--[ebp-0x4]
+```
 
    0x08048bc9 <+49>:	cmp    DWORD PTR [ebp-0xc],0x7  //consist of 1st integer
     uses any number fron 0 to 7
 
-
+```
 
 Combinations are used in this phase
 when 1st is 0
+```
 0x08048bd6 <+62>:	jmp    DWORD PTR [eax*4+0x80497e8] // shows to where the pointer moves
    according to how we run the program
+   ```
 
 EG: if run pass.txt
        1 t 4
+  
        (gdb) until *0x08048bd6
-       gdb) x/x $eax*4+0x80497e8
+       (gdb) x/x $eax*4+0x80497e8
           0x80497ec:	0x08048c00 //directs to the address to disply other charecters
+    
 ```
    0x08048c00 <+104>:	mov    bl,0x62              //bl gets b
 => 0x08048c02 <+106>:	cmp    DWORD PTR [ebp-0x4],0xd6 //cmp if 214
@@ -97,7 +102,7 @@ hence one combination is
 0x8049808:	"%d"
 then we went furthur to func4
 ```
-   0x08048ca8 <+8>:	mov    ebx,DWORD PTR [ebp+0x8]  //input into ebx  
+ 0x08048ca8 <+8>:	mov    ebx,DWORD PTR [ebp+0x8]  //input into ebx  
  0x08048cab <+11>:	cmp    ebx,0x1 //inp<=1-- return 1
 ```
 else
@@ -122,8 +127,8 @@ the program is basically fibonacci series
 *PHASE_5*
 ```
  0x08048d3b <+15>:	call   0x8049018 <string_length>
-   0x08048d40 <+20>:	add    esp,0x10
-   0x08048d43 <+23>:	cmp    eax,0x6                         //sHOWING string length to be 6
+ 0x08048d40 <+20>:	add    esp,0x10
+ 0x08048d43 <+23>:	cmp    eax,0x6                         //sHOWING string length to be 6
 ````
 
 
